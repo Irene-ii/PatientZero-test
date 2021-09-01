@@ -16,7 +16,7 @@
   \******************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar cheeses = __webpack_require__(/*! ./data/cheeses.json */ \"./src/server/data/cheeses.json\");\nvar router = express.Router();\nrouter.get('/api/cheeses', function (req, res, next) {\n    res.json(cheeses);\n});\nexports.default = router;\n\n\n//# sourceURL=webpack://react-shopping-cart/./src/server/routes.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar cheeses = __webpack_require__(/*! ./data/cheeses.json */ \"./src/server/data/cheeses.json\");\nvar fs = __webpack_require__(/*! fs */ \"fs\");\nvar router = express.Router();\nrouter.get(\"/api/cheeses\", function (req, res, next) {\n    res.json(cheeses);\n});\nrouter.post(\"/api/addItems\", function (req, res, next) {\n    var fs = __webpack_require__(/*! fs */ \"fs\");\n    var items = req.body;\n    //   fs.writeFile(\"./data/purchased.json\", JSON.stringify(items), (err) => {\n    //     if (err) throw err;\n    //     console.log(\"Users saved!\");\n    //   });\n    res.end();\n});\n// router.get(\"/api/purchased\", (req, res) => {\n//   res.json(purchased);\n// });\nexports.default = router;\n\n\n//# sourceURL=webpack://react-shopping-cart/./src/server/routes.ts?");
 
 /***/ }),
 
@@ -47,6 +47,16 @@ eval("module.exports = JSON.parse('[{\"id\":1,\"title\":\"ABBAYE DE BELLOC\",\"p
 /***/ ((module) => {
 
 module.exports = require("express");;
+
+/***/ }),
+
+/***/ "fs":
+/*!*********************!*\
+  !*** external "fs" ***!
+  \*********************/
+/***/ ((module) => {
+
+module.exports = require("fs");;
 
 /***/ })
 
